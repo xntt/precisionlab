@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- SEO Meta Tags -->
-  <title>ProJet CJP260Plus 3D Dental Printer | PrecisionLab</title>
-  <meta name="description" content="Professional 3D Dental Model Printer with CJP technology. High precision, 236×185×127mm build size, medical-grade materials for dental applications." />
-  <meta name="keywords" content="3D Dental Printer, Dental Model Printer, CJP 3D Printer, Dental 3D Printer, ProJet, CJP260Plus, Dental Lab Equipment, CAD/CAM" />
+  <title>ZP-Series Laboratory Rotary Tablet Press | PrecisionLab</title>
+  <meta name="description" content="High-performance ZP-Series Rotary Tablet Press for R&D and small-batch production. GMP compliant, 15,000+ tablets/hr. Ideal for biotech and pharmaceutical labs." />
+  <meta name="keywords" content="R&D Tablet Press, Laboratory Rotary Pill Press, Desktop Pharmaceutical Compressor, Biotech Micro-Production, ZP-5, ZP-7, ZP-9" />
   
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="ProJet CJP260Plus 3D Dental Printer | PrecisionLab" />
-  <meta property="og:description" content="Professional 3D Dental Model Printer with CJP technology for dental applications." />
-  <meta property="og:image" content="./images/press.jpg" />
+  <meta property="og:title" content="ZP-Series Laboratory Rotary Tablet Press | PrecisionLab" />
+  <meta property="og:description" content="Precision desktop rotary tablet press for modern biotech and pharmaceutical research. 15,000+ tablets/hr capacity." />
+  <meta property="og:image" content="./images/press.png" />
   <meta property="og:url" content="https://precisionlab.shop" />
   <meta property="og:type" content="product" />
 
@@ -43,18 +43,18 @@
     {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "ProJet CJP260Plus 3D Dental Printer",
-      "image": ["./images/press.jpg"],
-      "description": "Professional 3D Dental Model Printer with CJP technology. High precision, 236×185×127mm build size, medical-grade materials for dental applications.",
-      "brand": { "@type": "Brand", "name": "3D Systems" },
-      "sku": "CJP260PLUS-DENTAL",
+      "name": "ZP-Series Laboratory Rotary Tablet Press",
+      "image": ["./images/press.png"],
+      "description": "Desktop rotary tablet press for R&D and small batch production. GMP compliant, adjustable pressure, up to 15,000 tablets/hour.",
+      "brand": { "@type": "Brand", "name": "PrecisionLab" },
+      "sku": "ZP-SERIES-LAB",
       "offers": {
         "@type": "AggregateOffer",
         "url": "https://precisionlab.shop",
         "priceCurrency": "USD",
-        "lowPrice": "8000",
-        "highPrice": "15000",
-        "offerCount": "1"
+        "lowPrice": "2500",
+        "highPrice": "5500",
+        "offerCount": "3"
       }
     }
   </script>
@@ -82,7 +82,7 @@
   <script type="text/babel" data-type="module" data-presets="typescript,react">
     import React, { useState, useEffect } from 'react';
     import { createRoot } from 'react-dom/client';
-    import { ArrowRight, CheckCircle2, Menu, X, Microscope, Scale, ShieldCheck, Zap, Activity, Gauge, Settings, FlaskConical, Pill, Candy, School, Send, Phone, Mail, Printer, Box, Crown, Scan, HeartPulse } from 'lucide-react';
+    import { ArrowRight, CheckCircle2, Menu, X, Microscope, Scale, ShieldCheck, Zap, Activity, Gauge, Settings, FlaskConical, Pill, Candy, School, Send, Phone, Mail } from 'lucide-react';
 
     // --- Components ---
     // 1. Header
@@ -109,7 +109,7 @@
                     <img src="./images/logo.png" alt="PrecisionLab Logo" className="h-10 w-auto object-contain" onError={() => setLogoError(true)} />
                   ) : (
                     <div className={`p-2 rounded-lg ${isScrolled ? 'bg-brand-600 text-white' : 'bg-white/10 text-brand-900 backdrop-blur-sm border border-white/20'}`}>
-                      <Printer size={24} />
+                      <Microscope size={24} />
                     </div>
                   )}
                   <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-brand-900' : 'text-slate-800'}`}>
@@ -155,13 +155,13 @@
               <div className="mb-12 lg:mb-0 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-bold tracking-wide uppercase mb-6 border border-brand-200">
                   <span className="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
-                  CJP Technology - Dental Professional Series
+                  GMP Compliant Laboratory Series
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-brand-900 tracking-tight leading-tight mb-6">
-                  ProJet <span className="text-brand-600">CJP260Plus</span> 3D Dental Printer
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-900 tracking-tight leading-tight mb-6">
+                  Precision <span className="text-brand-600">Micro-Production</span> for Modern Biotech
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  Professional CJP (Color Jet Printing) technology for high-precision dental model production. Designed for dental labs, clinics, and orthodontic centers.
+                  The ZP-Series Rotary Tablet Press delivers high-consistency output in a compact, desktop format. Engineered for R&D labs, supplement startups, and pharmaceutical pilot runs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                   <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-lg px-8 py-4 rounded-lg font-semibold transition-all shadow-xl shadow-brand-600/20" >
@@ -171,33 +171,33 @@
                 <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-sm font-medium text-gray-500">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 size={16} className="text-brand-600" />
-                    <span>236×185×127mm Build Size</span>
+                    <span>15,000+ Tablets/hr</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 size={16} className="text-brand-600" />
-                    <span>±0.1mm Precision</span>
+                    <span>304 Stainless Steel</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 size={16} className="text-brand-600" />
-                    <span>Medical Grade Materials</span>
+                    <span>Compact Design</span>
                   </div>
                 </div>
               </div>
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white group">
                   <img 
-                    src="./images/press.jpg" 
-                    alt="ProJet CJP260Plus 3D Dental Printer" 
+                    src="./images/press.png" 
+                    alt="ZP-9 Laboratory Rotary Tablet Press Machine" 
                     className="w-full h-auto object-cover transform transition-transform hover:scale-105 duration-700 min-h-[300px] bg-slate-100"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = "https://placehold.co/800x600/f3f4f6/1f2937?text=Product+Image";
+                      e.currentTarget.src = "https://placehold.co/800x600/f3f4f6/1f2937?text=Product+Image:+press.png";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none flex items-end opacity-80 group-hover:opacity-100 transition-opacity">
                     <div className="p-8 text-white">
-                      <p className="font-bold text-lg">CJP260Plus</p>
-                      <p className="text-sm opacity-90">Professional Dental 3D Printer</p>
+                      <p className="font-bold text-lg">ZP-9 Rotary Press</p>
+                      <p className="text-sm opacity-90">Laboratory Standard Edition</p>
                     </div>
                   </div>
                 </div>
@@ -225,18 +225,14 @@
         <section className="py-20 bg-white" id="gallery">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-brand-900 mb-4">Professional Dental Printing Solution</h2>
+              <h2 className="text-3xl font-bold text-brand-900 mb-4">Engineered for Transparency</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                The CJP260Plus delivers exceptional precision and speed for various dental applications. From surgical guides to orthodontic models.
+                See the ZP-Series in action. Designed with a transparent organic glass housing to ensure 100% visibility during the R&D process while maintaining a sterile environment.
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-2xl w-full max-w-4xl">
-                <img 
-                  src="./images/press.jpg" 
-                  alt="ProJet CJP260Plus Dental Printer in Action"
-                  className="w-full h-auto object-cover"
-                />
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-2xl w-full max-w-[340px]" id="product-video-container" style={{ aspectRatio: '9/16' }} >
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Hj4-gabo1fU?rel=0&modestbranding=1&playsinline=1" title="ZP-Series Tablet Press Demo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="absolute inset-0 w-full h-full" ></iframe>
               </div>
             </div>
           </div>
@@ -247,21 +243,21 @@
     // 4. Features
     const Features = () => {
       const features = [
-        { title: "High Precision Printing", description: "Achieves ±0.1mm accuracy with 0.05-0.1mm layer thickness for detailed dental models.", iconName: "Scale" },
-        { title: "CJP Technology", description: "Color Jet Printing technology enables fast, reliable printing with excellent surface finish.", iconName: "Printer" },
-        { title: "Medical Grade Materials", description: "Supports medical resin, wax, and plaster materials certified for dental applications.", iconName: "ShieldCheck" },
-        { title: "Fast Production", description: "8-12 seconds per layer printing speed maximizes throughput for busy dental labs.", iconName: "Zap" },
-        { title: "Large Build Volume", description: "236×185×127mm build size accommodates multiple models or larger dental restorations.", iconName: "Box" },
-        { title: "Wide File Format Support", description: "Compatible with STL, PLY, OBJ, and 3MF CAD files from all major dental scanners.", iconName: "Settings" }
+        { title: "Precision Pressure Control", description: "Adjustable main pressure up to 60kN ensures consistent tablet hardness and thickness, critical for R&D validation.", iconName: "Scale" },
+        { title: "GMP Compliant Design", description: "Fully enclosed 304 stainless steel housing prevents cross-contamination and meets strict pharmaceutical hygiene standards.", iconName: "ShieldCheck" },
+        { title: "High Efficiency Output", description: "Continuous rotary mechanism delivers up to 16,200 tablets per hour, bridging the gap between benchtop and pilot scale.", iconName: "Zap" },
+        { title: "Variable Frequency Drive", description: "Smooth start-up and precise speed regulation allow for handling of challenging powder formulations without capping.", iconName: "Activity" },
+        { title: "Compact Desktop Footprint", description: "Maximize your lab space. The ZP-Series packs industrial rotary power into a unit that fits on a standard lab bench.", iconName: "Gauge" },
+        { title: "Easy Tooling Changeover", description: "Quick-release turret design minimizes downtime between formulations, ideal for multi-product research facilities.", iconName: "Settings" }
       ];
 
       const getIcon = (name) => {
         switch (name) {
           case 'Scale': return <Scale className="w-8 h-8" />;
-          case 'Printer': return <Printer className="w-8 h-8" />;
           case 'ShieldCheck': return <ShieldCheck className="w-8 h-8" />;
           case 'Zap': return <Zap className="w-8 h-8" />;
-          case 'Box': return <Box className="w-8 h-8" />;
+          case 'Activity': return <Activity className="w-8 h-8" />;
+          case 'Gauge': return <Gauge className="w-8 h-8" />;
           case 'Settings': return <Settings className="w-8 h-8" />;
           default: return <Activity className="w-8 h-8" />;
         }
@@ -271,12 +267,12 @@
         <section id="benefits" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase">Why Choose CJP260Plus?</h2>
+              <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase">Why Choose ZP-Series?</h2>
               <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-900 sm:text-4xl">
-                Precision Dental Printing. Professional Results.
+                Lab-Scale Precision. Industrial Reliability.
               </p>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                Designed specifically for dental professionals who demand accuracy, speed, and reliability.
+                Designed specifically to address the pain points of small-batch manufacturing and formulation development.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -300,17 +296,15 @@
     // 5. SpecsTable
     const SpecsTable = () => {
       const specs = [
-        { parameter: "Print Technology", value: "CJP (Color Jet Printing)" },
-        { parameter: "Build Size", value: "236 × 185 × 127 mm" },
-        { parameter: "Layer Thickness", value: "0.05 - 0.1 mm" },
-        { parameter: "Print Speed", value: "8-12 seconds/layer" },
-        { parameter: "Precision", value: "±0.1 mm" },
-        { parameter: "File Formats", value: "STL / PLY / OBJ / 3MF" },
-        { parameter: "Materials", value: "Medical Resin / Wax / Plaster" },
-        { parameter: "Power Consumption", value: "200W" },
-        { parameter: "Voltage", value: "110-220V" },
-        { parameter: "Machine Dimensions", value: "600 × 500 × 700 mm" },
-        { parameter: "Net Weight", value: "80 kg" },
+        { parameter: "Dies (Stations)", zp5: "5 Sets", zp7: "7 Sets", zp9: "9 Sets" },
+        { parameter: "Max. Pressure", zp5: "40 kN", zp7: "40 kN", zp9: "60 kN" },
+        { parameter: "Max. Tablet Diameter", zp5: "12 mm", zp7: "12 mm", zp9: "20 mm" },
+        { parameter: "Max. Filling Depth", zp5: "15 mm", zp7: "15 mm", zp9: "15 mm" },
+        { parameter: "Max. Tablet Thickness", zp5: "6 mm", zp7: "6 mm", zp9: "6 mm" },
+        { parameter: "Turret Speed", zp5: "0-30 rpm", zp7: "0-30 rpm", zp9: "0-30 rpm" },
+        { parameter: "Production Capacity", zp5: "9,000 pcs/h", zp7: "12,600 pcs/h", zp9: "16,200 pcs/h" },
+        { parameter: "Motor Power", zp5: "0.75 kW", zp7: "0.75 kW", zp9: "1.5 kW" },
+        { parameter: "Net Weight", zp5: "180 kg", zp7: "200 kg", zp9: "240 kg" },
       ];
 
       return (
@@ -320,12 +314,12 @@
               <div className="lg:col-span-4 mb-10 lg:mb-0">
                 <h2 className="text-3xl font-bold text-brand-900 mb-6">Technical Specifications</h2>
                 <p className="text-gray-600 mb-6 text-lg">
-                  Professional-grade specifications designed for demanding dental lab environments. The CJP260Plus delivers consistent, accurate results.
+                  Compare our ZP-Series models to find the perfect fit for your production requirements. The ZP-9 is our best-seller for versatility in tablet size and pressure.
                 </p>
                 <div className="bg-brand-50 border-l-4 border-brand-600 p-6 rounded-r-lg">
-                  <p className="font-semibold text-brand-900 mb-2">Need Custom Configuration?</p>
+                  <p className="font-semibold text-brand-900 mb-2">Need Custom Tooling?</p>
                   <p className="text-brand-800 text-sm">
-                    We offer customization options for specific dental applications. Contact us to discuss your requirements.
+                    We offer custom logo engraving and shaped dies (oval, capsule, geometric) compatible with all ZP-Series machines.
                   </p>
                 </div>
               </div>
@@ -335,20 +329,24 @@
                     <thead>
                       <tr className="bg-slate-900">
                         <th scope="col" className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider"> Parameter </th>
-                        <th scope="col" className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider"> Specification </th>
+                        <th scope="col" className="px-6 py-4 text-center text-xs font-bold text-white uppercase tracking-wider"> ZP-5 </th>
+                        <th scope="col" className="px-6 py-4 text-center text-xs font-bold text-white uppercase tracking-wider"> ZP-7 </th>
+                        <th scope="col" className="px-6 py-4 text-center text-xs font-bold text-blue-400 uppercase tracking-wider"> ZP-9 (Pro) </th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       {specs.map((row, idx) => (
                         <tr key={row.parameter} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> {row.parameter} </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 font-semibold"> {row.value} </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-600"> {row.zp5} </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-600"> {row.zp7} </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-brand-700 bg-blue-50/50"> {row.zp9} </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
-                <p className="mt-4 text-xs text-gray-400 text-right">* Specifications subject to change without prior notice.</p>
+                <p className="mt-4 text-xs text-gray-400 text-right">* Specifications subject to change without prior notice for improvement.</p>
               </div>
             </div>
           </div>
@@ -359,19 +357,19 @@
     // 6. Applications
     const Applications = () => {
       const applications = [
-        { title: "Oral Scanning", description: "Perfect for creating accurate digital impressions from oral scanner data for various dental restorations.", iconName: "Scan" },
-        { title: "Surgical Guides", description: "Print precise surgical guides for implant placement with optimal accuracy and fit.", iconName: "HeartPulse" },
-        { title: "Orthodontic Models", description: "Produce detailed orthodontic models for aligner therapy and bracket treatment planning.", iconName: "Scale" },
-        { title: "Restoration Models", description: "Create accurate crown, bridge, and veneer models for laboratory fabrication.", iconName: "Crown" }
+        { title: "Biotech & Pharma R&D", description: "Ideal for pilot runs and formulation testing before mass production. Minimize API waste with small batch precision.", iconName: "FlaskConical" },
+        { title: "Nutraceuticals", description: "Produce vitamins, minerals, and herbal supplements. High pressure capabilities allow for pressing difficult organic powders.", iconName: "Pill" },
+        { title: "Food & Confectionery", description: "Create compressed candy, mints, or bouillon cubes. Compatible with food-grade stainless steel tooling.", iconName: "Candy" },
+        { title: "University Labs", description: "A staple for pharmaceutical technology teaching labs. Safe, enclosed design protects students and maintains cleanliness.", iconName: "School" }
       ];
 
       const getIcon = (name) => {
         switch(name) {
-          case 'Scan': return <Scan size={32} />;
-          case 'HeartPulse': return <HeartPulse size={32} />;
-          case 'Scale': return <Scale size={32} />;
-          case 'Crown': return <Crown size={32} />;
-          default: return <Printer size={32} />;
+          case 'FlaskConical': return <FlaskConical size={32} />;
+          case 'Pill': return <Pill size={32} />;
+          case 'Candy': return <Candy size={32} />;
+          case 'School': return <School size={32} />;
+          default: return <FlaskConical size={32} />;
         }
       };
 
@@ -379,9 +377,9 @@
         <section id="applications" className="py-20 bg-slate-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Dental Applications</h2>
+              <h2 className="text-3xl font-bold mb-4">Versatile Applications</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                From diagnosis to final restoration, the CJP260Plus supports the entire dental production workflow.
+                From experimental drugs to commercial supplements, the ZP-Series adapts to your industry needs.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -415,7 +413,7 @@
               <div className="p-8 md:p-12">
                 <form action="https://formsubmit.co/admin@precisionlab.shop" method="POST" className="space-y-6" >
                   <input type="hidden" name="_next" value="https://precisionlab.shop/thanks.html" />
-                  <input type="hidden" name="_subject" value="New Request: ProJet CJP260Plus 3D Dental Printer" />
+                  <input type="hidden" name="_subject" value="New Request: ZP-Series Laboratory Rotary Tablet Press" />
                   <input type="text" name="_honey" style={{ display: 'none' }} />
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -424,27 +422,27 @@
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="jane@dental-lab.com" />
+                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="jane@biotech-labs.com" />
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company / Clinic</label>
-                      <input type="text" id="company" name="company" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Dental Lab Name" />
+                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company / Institution</label>
+                      <input type="text" id="company" name="company" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Acme Pharmaceuticals" />
                     </div>
                     <div>
-                      <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">Interested Configuration</label>
+                      <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">Interested Model</label>
                       <select id="model" name="model" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all bg-white" >
-                        <option value="CJP260Plus">CJP260Plus (Standard)</option>
-                        <option value="CJP260Plus-Pro">CJP260Plus Pro Bundle</option>
-                        <option value="Accessories">Additional Accessories</option>
-                        <option value="Consultation">Need Consultation</option>
+                        <option value="ZP-5">ZP-5 (5 Stations)</option>
+                        <option value="ZP-7">ZP-7 (7 Stations)</option>
+                        <option value="ZP-9">ZP-9 (9 Stations - Pro)</option>
+                        <option value="Unsure">Unsure / Need Advice</option>
                       </select>
                     </div>
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details / Questions</label>
-                    <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Tell us about your dental lab needs..." ></textarea>
+                    <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Write your message..." ></textarea>
                   </div>
                   <button type="submit" className="w-full flex items-center justify-center gap-2 text-white font-bold text-lg py-4 rounded-lg transition-all shadow-lg bg-brand-600 hover:bg-brand-700 shadow-brand-600/20" >
                     Send Quote Request <Send size={20} />
@@ -468,11 +466,11 @@
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               <div className="col-span-1 md:col-span-2">
                 <div className="flex items-center gap-2 mb-4 text-white">
-                  <Printer size={24} className="text-brand-500" />
+                  <Microscope size={24} className="text-brand-500" />
                   <span className="text-xl font-bold tracking-tight"> Precision<span className="text-brand-500">Lab</span> </span>
                 </div>
                 <p className="text-sm text-slate-400 max-w-sm mb-6">
-                  PrecisionLab provides professional 3D printing solutions for dental applications. We help dental labs and clinics embrace digital dentistry with cutting-edge technology.
+                  PrecisionLab specializes in high-quality, GMP-compliant laboratory equipment for the biotech and pharmaceutical sectors. We bridge the gap between R&D and production.
                 </p>
               </div>
               <div>
