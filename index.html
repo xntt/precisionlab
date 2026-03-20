@@ -3,288 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO Meta Tags -->
-  <title>ZP-Series Laboratory Rotary Tablet Press | PrecisionLab</title>
-  <meta name="description" content="High-performance ZP-Series Rotary Tablet Press for R&D and small-batch production. GMP compliant, 15,000+ tablets/hr. Ideal for biotech and pharmaceutical labs." />
-  <meta name="keywords" content="R&D Tablet Press, Laboratory Rotary Pill Press, Desktop Pharmaceutical Compressor, Biotech Micro-Production, ZP-5, ZP-7, ZP-9" />
+  <title>ProJet CJP260Plus 3D Dental Printer | PrecisionLab</title>
+  <meta name="description" content="Professional 3D Dental Printer with CJP technology. 236×185×127mm build size, ±0.1mm precision. For dental labs and clinics." />
+  <meta name="keywords" content="3D Dental Printer, CJP260Plus, Dental Lab Equipment, 3D Printer, ProJet, Dental Model Printer" />
   
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="ZP-Series Laboratory Rotary Tablet Press | PrecisionLab" />
-  <meta property="og:description" content="Precision desktop rotary tablet press for modern biotech and pharmaceutical research. 15,000+ tablets/hr capacity." />
-  <meta property="og:image" content="./images/press.png" />
-  <meta property="og:url" content="https://precisionlab.shop" />
+  <meta property="og:title" content="ProJet CJP260Plus 3D Dental Printer | PrecisionLab" />
+  <meta property="og:description" content="Professional 3D Dental Printer with CJP technology for dental applications." />
   <meta property="og:type" content="product" />
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              600: '#0284c7',
-              800: '#075985',
-              900: '#0f172a',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-          }
+          colors: { brand: { 50: '#f0f9ff', 100: '#e0f2fe', 600: '#0284c7', 800: '#075985', 900: '#0f172a' } }
         }
       }
     }
   </script>
 
-  <!-- JSON-LD Schema for Product -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "ZP-Series Laboratory Rotary Tablet Press",
-      "image": ["./images/press.png"],
-      "description": "Desktop rotary tablet press for R&D and small batch production. GMP compliant, adjustable pressure, up to 15,000 tablets/hour.",
-      "brand": { "@type": "Brand", "name": "PrecisionLab" },
-      "sku": "ZP-SERIES-LAB",
-      "offers": {
-        "@type": "AggregateOffer",
-        "url": "https://precisionlab.shop",
-        "priceCurrency": "USD",
-        "lowPrice": "2500",
-        "highPrice": "5500",
-        "offerCount": "3"
-      }
-    }
-  </script>
-
-  <!-- Import Map for React & Icons -->
   <script type="importmap">
     {
       "imports": {
         "react": "https://esm.sh/react@18.2.0",
         "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-        "lucide-react": "https://esm.sh/lucide-react@0.292.0",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "react/": "https://esm.sh/react@^19.2.3/"
+        "lucide-react": "https://esm.sh/lucide-react@0.292.0"
       }
     }
   </script>
-
-  <!-- Babel for in-browser JSX compilation -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body class="bg-gray-50 text-slate-900 antialiased selection:bg-brand-600 selection:text-white">
+<body class="bg-gray-50 text-slate-900 antialiased">
   <div id="root"></div>
 
-  <!-- MAIN APP SCRIPT -->
-  <script type="text/babel" data-type="module" data-presets="typescript,react">
-    import React, { useState, useEffect } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import { ArrowRight, CheckCircle2, Menu, X, Microscope, Scale, ShieldCheck, Zap, Activity, Gauge, Settings, FlaskConical, Pill, Candy, School, Send, Phone, Mail } from 'lucide-react';
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+    const { ArrowRight, CheckCircle2, Menu, X, Printer, Scale, ShieldCheck, Zap, Box, Settings, Send, Phone, Mail, Scan, Crown } = lucideReact;
 
-    // --- Components ---
-    // 1. Header
     const Header = () => {
       const [isScrolled, setIsScrolled] = useState(false);
       const [isMenuOpen, setIsMenuOpen] = useState(false);
-      const [logoError, setLogoError] = useState(false);
 
       useEffect(() => {
-        const handleScroll = () => {
-          setIsScrolled(window.scrollY > 20);
-        };
+        const handleScroll = () => setIsScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
       }, []);
 
       return (
-        <header className={`fixed w-full z-50 transition-all duration-300 ${ isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5' }`} >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center">
-                <a href="#" className="flex items-center gap-2">
-                  {!logoError ? (
-                    <img src="./images/logo.png" alt="PrecisionLab Logo" className="h-10 w-auto object-contain" onError={() => setLogoError(true)} />
-                  ) : (
-                    <div className={`p-2 rounded-lg ${isScrolled ? 'bg-brand-600 text-white' : 'bg-white/10 text-brand-900 backdrop-blur-sm border border-white/20'}`}>
-                      <Microscope size={24} />
-                    </div>
-                  )}
-                  <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-brand-900' : 'text-slate-800'}`}>
-                    Precision<span className="text-brand-600">Lab</span>
-                  </span>
-                </a>
+        <header className={`fixed w-full z-50 transition-all ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+          <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <div className={`p-2 rounded-lg ${isScrolled ? 'bg-brand-600 text-white' : 'bg-white/80 backdrop-blur'}`}>
+                <Printer size={24} />
               </div>
-              <div className="hidden md:flex">
-                <a href="#contact" className="bg-brand-600 hover:bg-brand-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand-600/20" >
-                  Request Quote
-                </a>
-              </div>
-              <div className="md:hidden">
-                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`p-2 rounded-md ${isScrolled ? 'text-gray-700' : 'text-gray-800'}`} aria-label="Toggle menu" >
-                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
-              </div>
+              <span className="text-xl font-bold">Precision<span className="text-brand-600">Lab</span></span>
             </div>
+            <div className="hidden md:flex gap-6">
+              <a href="#features" className="hover:text-brand-600">Features</a>
+              <a href="#specs" className="hover:text-brand-600">Specs</a>
+              <a href="#applications" className="hover:text-brand-600">Applications</a>
+              <a href="#contact" className="bg-brand-600 text-white px-5 py-2 rounded-full text-sm font-semibold">Request Quote</a>
+            </div>
+            <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
           {isMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t">
-              <div className="px-4 pt-2 pb-6 space-y-2">
-                <div className="pt-4">
-                  <a href="#contact" className="block w-full text-center bg-brand-600 text-white px-5 py-3 rounded-lg text-base font-semibold" onClick={() => setIsMenuOpen(false)} >
-                    Request Quote
-                  </a>
-                </div>
-              </div>
+            <div className="md:hidden bg-white border-t p-4 space-y-3">
+              <a href="#features" className="block">Features</a>
+              <a href="#specs" className="block">Specs</a>
+              <a href="#applications" className="block">Applications</a>
+              <a href="#contact" className="block text-brand-600 font-semibold">Request Quote</a>
             </div>
           )}
         </header>
       );
     };
 
-    // 2. Hero
-    const Hero = () => {
-      return (
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
-          <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-              <div className="mb-12 lg:mb-0 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-bold tracking-wide uppercase mb-6 border border-brand-200">
-                  <span className="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
-                  GMP Compliant Laboratory Series
-                </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-900 tracking-tight leading-tight mb-6">
-                  Precision <span className="text-brand-600">Micro-Production</span> for Modern Biotech
-                </h1>
-                <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  The ZP-Series Rotary Tablet Press delivers high-consistency output in a compact, desktop format. Engineered for R&D labs, supplement startups, and pharmaceutical pilot runs.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-                  <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-lg px-8 py-4 rounded-lg font-semibold transition-all shadow-xl shadow-brand-600/20" >
-                    Request Quote <ArrowRight size={20} />
-                  </a>
-                </div>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-sm font-medium text-gray-500">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={16} className="text-brand-600" />
-                    <span>15,000+ Tablets/hr</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={16} className="text-brand-600" />
-                    <span>304 Stainless Steel</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={16} className="text-brand-600" />
-                    <span>Compact Design</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white group">
-                  <img 
-                    src="./images/press.png" 
-                    alt="ZP-9 Laboratory Rotary Tablet Press Machine" 
-                    className="w-full h-auto object-cover transform transition-transform hover:scale-105 duration-700 min-h-[300px] bg-slate-100"
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = "https://placehold.co/800x600/f3f4f6/1f2937?text=Product+Image:+press.png";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none flex items-end opacity-80 group-hover:opacity-100 transition-opacity">
-                    <div className="p-8 text-white">
-                      <p className="font-bold text-lg">ZP-9 Rotary Press</p>
-                      <p className="text-sm opacity-90">Laboratory Standard Edition</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-xl border border-gray-100 hidden sm:block">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-green-100 p-2 rounded-full">
-                      <CheckCircle2 className="text-green-600" size={24} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-semibold uppercase">Status</p>
-                      <p className="text-sm font-bold text-gray-900">In Stock - Ready to Ship</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    const Hero = () => (
+      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+              CJP Technology - Dental Professional Series
             </div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-brand-900 mb-6">
+              ProJet <span className="text-brand-600">CJP260Plus</span> 3D Dental Printer
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              Professional CJP (Color Jet Printing) technology for high-precision dental model production. Designed for dental labs, clinics, and orthodontic centers.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-500 mb-8">
+              <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-brand-600" />236×185×127mm Build Size</span>
+              <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-brand-600" />±0.1mm Precision</span>
+              <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-brand-600" />Medical Grade Materials</span>
+            </div>
+            <a href="#contact" className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg">
+              Request Quote <ArrowRight size={20} />
+            </a>
           </div>
-        </section>
-      );
-    };
+        </div>
+      </section>
+    );
 
-    // 3. ProductGallery
-    const ProductGallery = () => {
-      return (
-        <section className="py-20 bg-white" id="gallery">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-brand-900 mb-4">Engineered for Transparency</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                See the ZP-Series in action. Designed with a transparent organic glass housing to ensure 100% visibility during the R&D process while maintaining a sterile environment.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-2xl w-full max-w-[340px]" id="product-video-container" style={{ aspectRatio: '9/16' }} >
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Hj4-gabo1fU?rel=0&modestbranding=1&playsinline=1" title="ZP-Series Tablet Press Demo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="absolute inset-0 w-full h-full" ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-      );
-    };
-
-    // 4. Features
     const Features = () => {
       const features = [
-        { title: "Precision Pressure Control", description: "Adjustable main pressure up to 60kN ensures consistent tablet hardness and thickness, critical for R&D validation.", iconName: "Scale" },
-        { title: "GMP Compliant Design", description: "Fully enclosed 304 stainless steel housing prevents cross-contamination and meets strict pharmaceutical hygiene standards.", iconName: "ShieldCheck" },
-        { title: "High Efficiency Output", description: "Continuous rotary mechanism delivers up to 16,200 tablets per hour, bridging the gap between benchtop and pilot scale.", iconName: "Zap" },
-        { title: "Variable Frequency Drive", description: "Smooth start-up and precise speed regulation allow for handling of challenging powder formulations without capping.", iconName: "Activity" },
-        { title: "Compact Desktop Footprint", description: "Maximize your lab space. The ZP-Series packs industrial rotary power into a unit that fits on a standard lab bench.", iconName: "Gauge" },
-        { title: "Easy Tooling Changeover", description: "Quick-release turret design minimizes downtime between formulations, ideal for multi-product research facilities.", iconName: "Settings" }
+        { title: "CJP Technology", description: "Color Jet Printing technology enables fast, reliable printing with excellent surface finish for dental applications." },
+        { title: "High Precision", description: "±0.1mm accuracy with 0.05-0.1mm layer thickness ensures detailed, accurate dental models every time." },
+        { title: "Medical Grade Materials", description: "Supports medical resin, wax, and石膏 materials certified for dental applications." },
+        { title: "Fast Production", description: "8-12 seconds per layer printing speed maximizes throughput for busy dental labs." },
+        { title: "Large Build Volume", description: "236×185×127mm build size accommodates multiple models or larger dental restorations." },
+        { title: "Wide File Format Support", description: "Compatible with STL, PLY, OBJ, and 3MF CAD files from all major dental scanners." }
       ];
 
-      const getIcon = (name) => {
-        switch (name) {
-          case 'Scale': return <Scale className="w-8 h-8" />;
-          case 'ShieldCheck': return <ShieldCheck className="w-8 h-8" />;
-          case 'Zap': return <Zap className="w-8 h-8" />;
-          case 'Activity': return <Activity className="w-8 h-8" />;
-          case 'Gauge': return <Gauge className="w-8 h-8" />;
-          case 'Settings': return <Settings className="w-8 h-8" />;
-          default: return <Activity className="w-8 h-8" />;
-        }
-      };
-
       return (
-        <section id="benefits" className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="features" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-base text-brand-600 font-semibold tracking-wide uppercase">Why Choose ZP-Series?</h2>
-              <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-900 sm:text-4xl">
-                Lab-Scale Precision. Industrial Reliability.
-              </p>
-              <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                Designed specifically to address the pain points of small-batch manufacturing and formulation development.
-              </p>
+              <h2 className="text-3xl font-bold text-brand-900 mb-4">Product Features</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Professional-grade features designed for demanding dental lab environments.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6">
-                    {getIcon(feature.iconName)}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+              {features.map((f, i) => (
+                <div key={i} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{f.title}</h3>
+                  <p className="text-gray-600">{f.description}</p>
                 </div>
               ))}
             </div>
@@ -293,105 +138,65 @@
       );
     };
 
-    // 5. SpecsTable
     const SpecsTable = () => {
       const specs = [
-        { parameter: "Dies (Stations)", zp5: "5 Sets", zp7: "7 Sets", zp9: "9 Sets" },
-        { parameter: "Max. Pressure", zp5: "40 kN", zp7: "40 kN", zp9: "60 kN" },
-        { parameter: "Max. Tablet Diameter", zp5: "12 mm", zp7: "12 mm", zp9: "20 mm" },
-        { parameter: "Max. Filling Depth", zp5: "15 mm", zp7: "15 mm", zp9: "15 mm" },
-        { parameter: "Max. Tablet Thickness", zp5: "6 mm", zp7: "6 mm", zp9: "6 mm" },
-        { parameter: "Turret Speed", zp5: "0-30 rpm", zp7: "0-30 rpm", zp9: "0-30 rpm" },
-        { parameter: "Production Capacity", zp5: "9,000 pcs/h", zp7: "12,600 pcs/h", zp9: "16,200 pcs/h" },
-        { parameter: "Motor Power", zp5: "0.75 kW", zp7: "0.75 kW", zp9: "1.5 kW" },
-        { parameter: "Net Weight", zp5: "180 kg", zp7: "200 kg", zp9: "240 kg" },
+        ["Build Size", "236 × 185 × 127 mm"],
+        ["Layer Thickness", "0.05 - 0.1 mm"],
+        ["Print Speed", "8-12 seconds/layer"],
+        ["Precision", "±0.1 mm"],
+        ["Materials", "Medical Resin / Wax / Plaster"],
+        ["File Formats", "STL / PLY / OBJ / 3MF"],
+        ["Power Consumption", "200W"],
+        ["Voltage", "110-220V"],
+        ["Machine Dimensions", "600 × 500 × 700 mm"],
+        ["Net Weight", "80 kg"]
       ];
 
       return (
-        <section id="specs" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-              <div className="lg:col-span-4 mb-10 lg:mb-0">
-                <h2 className="text-3xl font-bold text-brand-900 mb-6">Technical Specifications</h2>
-                <p className="text-gray-600 mb-6 text-lg">
-                  Compare our ZP-Series models to find the perfect fit for your production requirements. The ZP-9 is our best-seller for versatility in tablet size and pressure.
-                </p>
-                <div className="bg-brand-50 border-l-4 border-brand-600 p-6 rounded-r-lg">
-                  <p className="font-semibold text-brand-900 mb-2">Need Custom Tooling?</p>
-                  <p className="text-brand-800 text-sm">
-                    We offer custom logo engraving and shaped dies (oval, capsule, geometric) compatible with all ZP-Series machines.
-                  </p>
-                </div>
-              </div>
-              <div className="lg:col-span-8">
-                <div className="overflow-x-auto rounded-xl shadow-lg border border-gray-200">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead>
-                      <tr className="bg-slate-900">
-                        <th scope="col" className="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider"> Parameter </th>
-                        <th scope="col" className="px-6 py-4 text-center text-xs font-bold text-white uppercase tracking-wider"> ZP-5 </th>
-                        <th scope="col" className="px-6 py-4 text-center text-xs font-bold text-white uppercase tracking-wider"> ZP-7 </th>
-                        <th scope="col" className="px-6 py-4 text-center text-xs font-bold text-blue-400 uppercase tracking-wider"> ZP-9 (Pro) </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {specs.map((row, idx) => (
-                        <tr key={row.parameter} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> {row.parameter} </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-600"> {row.zp5} </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-600"> {row.zp7} </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-brand-700 bg-blue-50/50"> {row.zp9} </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="mt-4 text-xs text-gray-400 text-right">* Specifications subject to change without prior notice for improvement.</p>
-              </div>
+        <section id="specs" className="py-20 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-brand-900 mb-4">Technical Specifications</h2>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <table className="w-full">
+                <tbody>
+                  {specs.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      <td className="px-6 py-4 font-medium text-gray-900">{row[0]}</td>
+                      <td className="px-6 py-4 text-gray-600">{row[1]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
       );
     };
 
-    // 6. Applications
     const Applications = () => {
-      const applications = [
-        { title: "Biotech & Pharma R&D", description: "Ideal for pilot runs and formulation testing before mass production. Minimize API waste with small batch precision.", iconName: "FlaskConical" },
-        { title: "Nutraceuticals", description: "Produce vitamins, minerals, and herbal supplements. High pressure capabilities allow for pressing difficult organic powders.", iconName: "Pill" },
-        { title: "Food & Confectionery", description: "Create compressed candy, mints, or bouillon cubes. Compatible with food-grade stainless steel tooling.", iconName: "Candy" },
-        { title: "University Labs", description: "A staple for pharmaceutical technology teaching labs. Safe, enclosed design protects students and maintains cleanliness.", iconName: "School" }
+      const apps = [
+        { title: "Oral Scanning", description: "Perfect for creating accurate digital impressions from oral scanner data." },
+        { title: "Surgical Guides", description: "Print precise surgical guides for implant placement with optimal accuracy." },
+        { title: "Orthodontic Models", description: "Produce detailed orthodontic models for aligner therapy planning." },
+        { title: "Restoration Models", description: "Create accurate crown, bridge, and veneer models for lab fabrication." },
+        { title: "Temporary Crowns", description: "Print temporary crowns and bridges for immediate patient fitting." },
+        { title: "Fixed Prosthodontics", description: "Produce precise models for fixed dental restorations." }
       ];
 
-      const getIcon = (name) => {
-        switch(name) {
-          case 'FlaskConical': return <FlaskConical size={32} />;
-          case 'Pill': return <Pill size={32} />;
-          case 'Candy': return <Candy size={32} />;
-          case 'School': return <School size={32} />;
-          default: return <FlaskConical size={32} />;
-        }
-      };
-
       return (
-        <section id="applications" className="py-20 bg-slate-900 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="applications" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Versatile Applications</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                From experimental drugs to commercial supplements, the ZP-Series adapts to your industry needs.
-              </p>
+              <h2 className="text-3xl font-bold text-brand-900 mb-4">Applications</h2>
+              <p className="text-gray-600">Wide range of dental applications for modern dentistry.</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {applications.map((app, index) => (
-                <div key={index} className="bg-slate-800 rounded-xl p-6 text-center hover:bg-slate-700 transition-colors border border-slate-700">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-600/20 text-brand-400 mb-6">
-                    {getIcon(app.iconName)}
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{app.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {app.description}
-                  </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {apps.map((app, i) => (
+                <div key={i} className="bg-slate-50 rounded-lg p-5">
+                  <h3 className="font-bold text-brand-900 mb-2">{app.title}</h3>
+                  <p className="text-sm text-gray-600">{app.description}</p>
                 </div>
               ))}
             </div>
@@ -400,134 +205,62 @@
       );
     };
 
-    // 7. ContactForm
-    const ContactForm = () => {
-      return (
-        <section id="contact" className="py-20 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="bg-brand-600 px-8 py-10 text-center">
-                <h2 className="text-3xl font-bold text-white mb-2">Request a Quote</h2>
-                <p className="text-brand-100"> Get pricing, lead times, and shipping estimates within 24 hours. </p>
+    const ContactForm = () => (
+      <section id="contact" className="py-20 bg-gray-50">
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h2 className="text-2xl font-bold text-center mb-2">Request a Quote</h2>
+            <p className="text-gray-500 text-center mb-8">Get pricing and lead times within 24 hours</p>
+            <form action="https://formsubmit.co/admin@precisionlab.shop" method="POST" className="space-y-4">
+              <input type="hidden" name="_subject" value="New Request: CJP260Plus 3D Dental Printer" />
+              <div className="grid md:grid-cols-2 gap-4">
+                <input type="text" name="name" required placeholder="Full Name" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 outline-none" />
+                <input type="email" name="email" required placeholder="Email Address" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 outline-none" />
               </div>
-              <div className="p-8 md:p-12">
-                <form action="https://formsubmit.co/admin@precisionlab.shop" method="POST" className="space-y-6" >
-                  <input type="hidden" name="_next" value="https://precisionlab.shop/thanks.html" />
-                  <input type="hidden" name="_subject" value="New Request: ZP-Series Laboratory Rotary Tablet Press" />
-                  <input type="text" name="_honey" style={{ display: 'none' }} />
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                      <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Dr. Jane Smith" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="jane@biotech-labs.com" />
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company / Institution</label>
-                      <input type="text" id="company" name="company" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Acme Pharmaceuticals" />
-                    </div>
-                    <div>
-                      <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">Interested Model</label>
-                      <select id="model" name="model" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all bg-white" >
-                        <option value="ZP-5">ZP-5 (5 Stations)</option>
-                        <option value="ZP-7">ZP-7 (7 Stations)</option>
-                        <option value="ZP-9">ZP-9 (9 Stations - Pro)</option>
-                        <option value="Unsure">Unsure / Need Advice</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details / Questions</label>
-                    <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 focus:border-transparent outline-none transition-all" placeholder="Write your message..." ></textarea>
-                  </div>
-                  <button type="submit" className="w-full flex items-center justify-center gap-2 text-white font-bold text-lg py-4 rounded-lg transition-all shadow-lg bg-brand-600 hover:bg-brand-700 shadow-brand-600/20" >
-                    Send Quote Request <Send size={20} />
-                  </button>
-                  <p className="text-xs text-gray-500 text-center mt-4">
-                    Your data is secure. We never sell your information to third parties.
-                  </p>
-                </form>
-              </div>
-            </div>
+              <input type="text" name="company" placeholder="Company / Clinic" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 outline-none" />
+              <textarea name="message" rows={4} required placeholder="Your requirements..." className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-600 outline-none"></textarea>
+              <button type="submit" className="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-lg transition">Send Quote Request</button>
+            </form>
           </div>
-        </section>
-      );
-    };
-
-    // 8. Footer
-    const Footer = () => {
-      return (
-        <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="col-span-1 md:col-span-2">
-                <div className="flex items-center gap-2 mb-4 text-white">
-                  <Microscope size={24} className="text-brand-500" />
-                  <span className="text-xl font-bold tracking-tight"> Precision<span className="text-brand-500">Lab</span> </span>
-                </div>
-                <p className="text-sm text-slate-400 max-w-sm mb-6">
-                  PrecisionLab specializes in high-quality, GMP-compliant laboratory equipment for the biotech and pharmaceutical sectors. We bridge the gap between R&D and production.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-center gap-3">
-                    <Phone size={18} className="text-brand-500 shrink-0" />
-                    <span>Whatsapp: +1 (732) 823-9666</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Mail size={18} className="text-brand-500 shrink-0" />
-                    <span>admin@precisionlab.shop</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-              <p>&copy; {new Date().getFullYear()} PrecisionLab Equipment Co. All rights reserved.</p>
-              <div className="flex gap-4 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white">Privacy Policy</a>
-                <a href="#" className="hover:text-white">Terms of Service</a>
-                <a href="#" className="hover:text-white">Shipping Info</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      );
-    };
-
-    // --- Main App ---
-    const App = () => {
-      return (
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main>
-            <Hero />
-            <ProductGallery />
-            <Features />
-            <SpecsTable />
-            <Applications />
-            <ContactForm />
-          </main>
-          <Footer />
         </div>
-      );
-    };
+      </section>
+    );
 
-    // --- Mounting ---
-    const rootElement = document.getElementById('root');
-    if (rootElement) {
-      const root = createRoot(rootElement);
-      root.render(
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      );
-    }
+    const Footer = () => (
+      <footer className="bg-slate-900 text-slate-400 py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2 text-white">
+              <Printer size={24} className="text-brand-500" />
+              <span className="text-xl font-bold">PrecisionLab</span>
+            </div>
+            <div className="flex gap-6 text-sm">
+              <span>admin@precisionlab.shop</span>
+              <span>Whatsapp: +1 (732) 823-9666</span>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-slate-800 text-center text-sm">
+            © 2026 PrecisionLab Equipment Co. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    );
+
+    const App = () => (
+      <div>
+        <Header />
+        <main>
+          <Hero />
+          <Features />
+          <SpecsTable />
+          <Applications />
+          <ContactForm />
+        </main>
+        <Footer />
+      </div>
+    );
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
   </script>
 </body>
 </html>
